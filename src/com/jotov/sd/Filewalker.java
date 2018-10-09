@@ -3,6 +3,11 @@ package com.jotov.sd;
 import java.io.File;
 
 public class Filewalker {
+    private Filemover mover;
+    public Filewalker(Filemover mover){
+        this.mover = mover;
+    }
+
     public void walk( String path ) {
 
         File root = new File( path );
@@ -13,11 +18,12 @@ public class Filewalker {
 
         for ( File f : list ) {
             if ( f.isDirectory() ) {
-                walk( f.getAbsolutePath() );
                 System.out.println( "Dir:" + f.getAbsoluteFile() );
+                walk( f.getAbsolutePath() );
             }
             else {
                 System.out.println( "File:" + f.getAbsoluteFile() );
+                mover.move(f);
             }
         }
     }
