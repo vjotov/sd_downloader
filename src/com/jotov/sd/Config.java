@@ -11,7 +11,6 @@ public class Config
     {
         String filename = "/config.properties";
         InputStream is = Config.class.getResourceAsStream(filename);
-        System.out.println(is==null);
 
         configFile = new java.util.Properties();
         try {

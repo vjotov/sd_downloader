@@ -8,18 +8,13 @@ import java.io.IOException;
 
 
 public class Main {
+    static String sourceFolder;
+    static String targetFolder;
 
     public static void main(String[] args) throws IOException  {
         Config cfg = new Config();
-        String from   = cfg.getProperty("sd_path");
-        System.out.println(from);
-        String to = cfg.getProperty("download_path");
-        System.out.println(to);
+        sourceFolder   = cfg.getProperty("sd_path");
+        targetFolder = cfg.getProperty("download_path");
     }
-    // read config
-    private static void loadConfig() throws IOException {
-        String propFileName = "config.properties";
-        CrunchifyGetPropertyValues properties = new CrunchifyGetPropertyValues();
-        String propValues = properties.getPropValues();
-    }
+
 }
