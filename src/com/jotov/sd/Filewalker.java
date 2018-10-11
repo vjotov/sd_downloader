@@ -3,9 +3,9 @@ package com.jotov.sd;
 import java.io.File;
 
 public class Filewalker {
-    private Filemover mover;
-    public Filewalker(Filemover mover){
-        this.mover = mover;
+    private Filecopier copier;
+    public Filewalker(Filecopier copier){
+        this.copier = copier;
     }
 
     public void walk( String path ) {
@@ -23,7 +23,7 @@ public class Filewalker {
             }
             else {
                 System.out.println( "File:" + f.getAbsoluteFile() );
-                mover.move(f);
+                copier.copy(f);
             }
         }
     }

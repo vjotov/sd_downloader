@@ -1,6 +1,5 @@
 package com.jotov.sd;
 
-import java.io.File;
 import java.io.IOException;
 
 
@@ -12,7 +11,7 @@ public class Main {
         Config cfg = new Config();
         sourceFolder   = cfg.getProperty("sd_path");
         targetFolder = cfg.getProperty("download_path");
-        Filemover fm = new Filemover(targetFolder);
+        Filecopier fm = new Filecopier(targetFolder);
         Filewalker fw = new Filewalker(fm);
         fw.walk(sourceFolder);
     }
